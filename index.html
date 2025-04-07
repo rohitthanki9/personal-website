@@ -1,0 +1,262 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Rohit Thanki - AI Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f9fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0077b6;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #023e8a;
+    }
+
+    .site-header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #0077b6;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .nav-links li a:hover {
+      color: #0077b6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .main-content {
+      padding: 2rem 0;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro .bio {
+      flex: 1 1 60%;
+    }
+
+    .profile-img {
+      flex: 1 1 30%;
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .projects h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #023e8a;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .project-card img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      margin: 0.5rem 0;
+      color: #0077b6;
+    }
+
+    p {
+      text-align: justify;
+    }
+    
+    .site-footer {
+      background-color: #e0f0ff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <div class="logo">Dr. Rohit Thanki</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="services.html">Editorial Services</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="chapters.html">Chapters</a></li>
+          <li><a href="journals.html">Publications</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="intro">
+      <div class="bio">
+        <h1>Welcome, I'm Dr. Rohit Thanki</h1>
+
+        <p>
+          I am an innovator and entrepreneur with over <strong>12+ years of research experience</strong> and <strong>5+ years in
+            AI-driven MedTech startups</strong> across Europe, the Middle East and India. As a <strong>Technical Lead & Data Scientist</strong>,
+            I specialize in developing cutting-edge solutions in <strong>healthcare AI</strong>, <strong>computer vision</strong>, <strong>medical imaging analysis</strong>,
+            <strong>internet of medical things (IOMT)</strong>, <strong>ownership authentication</strong> and <strong>copyright protection</strong>,
+            especially in regulated environments involving <strong><em>Software as a Medical Device (SaMD)</em></strong>.
+        </p>
+
+        <p>
+           With <strong>20+ technical books</strong> and <strong>50+ published research articles</strong>, I have been recognized among the <strong>top
+            2% of global research scientists</strong> by Stanford and Elsevier in 2024. My goal is to continue bridging the gap between academic innovation
+            and commercial healthcare transformation, empowering both startups and healthcare providers to harness the full potential of artificial intelligence.
+        </p>
+
+      </div>
+      <img src="images/rohit.jpg" alt="Dr. Rohit Thanki" class="profile-img">
+    </section>
+
+    <section class="projects">
+      <h2>AI & Computer Vision Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="images/prognica_mmg.png" alt="PrognicaMMG">
+          <h3>PrognicaMMG </h3>
+          <p><strong>Detects masses in mammograms and segments tumors using AI algorithms to aid early diagnosis of breast cancer </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/prognica_usg.png" alt="PrognicaUSG">
+          <h3>PrognicaUSG </h3>
+          <p><strong>Analyzes ultrasound images for breast tumor segmentation and classification to enhance radiological workflows </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/packaging.png" alt="Smart Packaging">
+          <h3>Smart and Intelligent Packaging </h3>
+          <p><strong>Invisible crypto-signature technology for packaging authentication in pharma and FMCG sectors </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/colpo.jpg" alt="colposocpy AI">
+          <h3>Colposocpy AI</h3>
+          <p><strong>Detects HPV positive or negative in context of cervical cancer </strong> </p>
+        </div>
+        <div class="project-card">
+          <img src="images/papsmear.bmp" alt="pap smear AI">
+          <h3>Pap Smear AI</h3>
+          <p><strong>Identifies cervical cancer cellular characteristics with high precision </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/histopathology.png" alt="Tumor Histopathology AI">
+          <h3>Tumor Histopathology AI</h3>
+          <p><strong>Assists in cervical cancer tumor classification and staging </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/retina.jpg" alt="RIGA AI">
+          <h3>RIGA AI</h3>
+          <p><strong>Fundus Retinal Imaging for Glaucoma Analysis </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/secure_sense_ai.png" alt="Secure Sense AI">
+          <h3>SecureSenseAI</h3>
+          <p><strong>Uses AI for clustering and classification of satellite images
+              while embedding secure watermarks to protect data integrity and ownership. </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/medical_data_watermarking.png" alt="Medical Data Watermarking">
+          <h3>MediMark</h3>
+          <p><strong>Embeds encrypted patient data into medical images to ensure secure sharing and compliance in clinical environments </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/multibiometric_watermarking.png" alt="Multibiometric Watermarking">
+          <h3>BioSecureMark</h3>
+          <p><strong>Combines multiple biometric traits in a secure watermark to enhance identity protection
+              and anti-spoofing in biometric systems </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/cs_crypt.png" alt="CS Crypt">
+          <h3> CS-Crypt</h3>
+          <p><strong>Uses compressive sensing to simultaneously encrypt and compress multimedia data
+              for secure and efficient transmission </strong></p>
+        </div>
+        <div class="project-card">
+          <img src="images/digital_multimedia_watermarking.png" alt="Digital Multimedia Watermarking">
+          <h3>SecureMark</h3>
+          <p><strong>Protects digital images and videos by embedding invisible watermarks to prevent
+              unauthorized use and ensure authenticity </strong></p>
+        </div>
+      </div>
+    </section>
+    <p style="text-align: center; font-size: 0.9rem; color: #888; margin-top: 1rem;">
+      All images shown are used for demonstration purposes only and are the intellectual property of their respective company's.
+        Any resemblance to actual products is purely coincidental and not intended for commercial use.
+    </p>
+  </main>
+
+<footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Dr. Rohit Thanki | Researcher & MedTech Consultant</p>
+    </div>
+  </footer>
+</body>
+</html>
