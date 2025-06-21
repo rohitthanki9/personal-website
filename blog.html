@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogs by Dr. Rohit Thanki</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    }
+    main {
+      flex: 1; /* Allows main content to grow and push footer down */
+      padding-bottom: 5rem; /* Add padding to prevent content from being hidden by fixed footer */
+    }
+    .site-footer {
+      position: fixed; /* Fixed position */
+      bottom: 0; /* Align to the bottom of the viewport */
+      width: 100%; /* Full width */
+      z-index: 999; /* Ensure it stays above other content if scrolling */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed antialiased">
+  <header class="site-header bg-blue-100 shadow-md py-4 sticky top-0 z-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="logo text-2xl font-bold text-blue-800 mb-2 md:mb-0">Dr. Rohit Thanki</div>
+      <nav class="w-full md:w-auto">
+        <ul class="nav-links flex flex-wrap justify-center md:flex-nowrap md:space-x-6 space-x-4">
+          <li><a href="index.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Home</a></li>
+          <li><a href="about.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">About Me</a></li>
+          <li><a href="experience.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Experience</a></li>
+          <li><a href="projects.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">AI & CV Projects</a></li>
+          <li><a href="services.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Professional Contributions</a></li>
+          <li><a href="books.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Books</a></li>
+          <li><a href="chapters.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Book Chapters</a></li>
+          <li><a href="journals.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Publications</a></li>
+          <li><a href="blog.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Blogs</a></li>
+          <li><a href="skills.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Skills</a></li>
+          <li><a href="trainings.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Trainings</a></li>
+          <li><a href="contact.html" class="font-medium text-blue-700 hover:text-blue-900 transition duration-300">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main class="container mx-auto px-4 py-8 md:py-12">
+
+    <div class="blog-entry bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">How Signal Processing Supports Multibiometric Systems and Makes Them More Secure</h2>
+      <p class="mb-4 text-gray-700 text-justify">This blog highlights the role of signal processing in enhancing the security and performance of multibiometric systems. Published by the IEEE Signal Processing Society in June 2017, the article emphasizes techniques and frameworks used in feature extraction, fusion, and pattern recognition.</p>
+      <p><a href="https://signalprocessingsociety.org/publications-resources/blog/how-signal-processing-supports-multibiometric-systems-and-makes-them" target="_blank" class="font-medium text-blue-600 hover:underline">Read Full Article</a></p>
+    </div>
+
+    <div class="blog-entry bg-white rounded-2xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Saving Lives with Smarter Screening: The New Power of AI Against Cervical Cancer</h2>
+      <p class="mb-4 text-gray-700 text-justify">This blog highlights how CervixVision is using AI to bring earlier, more accurate screening and detection to cervical cancer. Published on LinkedIn in April 2025, the article explores how AI-driven tools, such as CervixVision, are transforming cervical cancer screening by enabling faster, more accurate, and accessible diagnostics through predictive medical imaging analysis.</p>
+      <p><a href="https://www.linkedin.com/pulse/saving-lives-smarter-screening-new-power-ai-against-cervical-thanki-1c5xe/?trackingId=wlf29Dc6QliP3UmtgQvJMw%3D%3D" target="_blank" class="font-medium text-blue-600 hover:underline">Read Full Article</a></p>
+    </div>
+
+</main>
+
+<footer class="site-footer bg-blue-100 text-center py-4 text-gray-700 text-sm mt-12">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2025 Dr. Rohit Thanki | Senior AI Researcher, Data Scientist & Consultant</p>
+    </div>
+  </footer>
+</body>
+</html>
+
