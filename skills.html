@@ -7,27 +7,59 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts for Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons (No longer needed for skills but keeping for main section icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+      min-height: 100vh;
+      background-color: #f0f4f8; /* A cooler, lighter gray */
     }
     main {
-      flex: 1; /* Allows main content to grow and push footer down */
-      padding-bottom: 5rem; /* Add padding to prevent content from being hidden by fixed footer */
+      flex: 1;
+      padding-bottom: 6rem; /* Increased padding for footer */
     }
     .site-footer {
-      position: fixed; /* Fixed position */
-      bottom: 0; /* Align to the bottom of the viewport */
-      width: 100%; /* Full width */
-      z-index: 999; /* Ensure it stays above other content if scrolling */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 50;
+    }
+    /* Enhanced skill badge style */
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #ffffff;
+      color: #4338ca; /* Indigo text */
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem; /* Slightly less rounded */
+      font-size: 0.875rem; /* 14px */
+      font-weight: 600; /* Bolder */
+      transition: all 0.2s ease-in-out;
+      border: 1px solid #e0e7ff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .skill-badge:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 6px 15px rgba(67, 56, 202, 0.15);
+      background-color: #eef2ff;
+      color: #3730a3;
+    }
+    .section-card {
+        transition: all 0.3s ease-in-out;
+    }
+    .section-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 leading-relaxed antialiased">
+  <!-- Header style updated as per your request -->
   <header class="site-header bg-blue-100 shadow-md py-4 sticky top-0 z-10">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="logo text-2xl font-bold text-blue-800 mb-2 md:mb-0">Dr. Rohit Thanki</div>
@@ -50,122 +82,164 @@
     </div>
   </header>
 
-<main class="container mx-auto px-4 py-8 md:py-12">
+<main class="container mx-auto px-4 py-8 md:py-16">
 
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Leadership & Strategic Management</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">R&D Leadership</strong>, <strong class="text-blue-700">Team Management</strong>, <strong class="text-blue-700">Strategic & Organizational Planning</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">High-level Decision Making</strong>, <strong class="text-blue-700">Technical Roadmapping</strong>, and <strong class="text-blue-700">Problem Solving</strong></li>
-      </ul>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Section 1: Strategic Planning & Technical Leadership -->
+        <section class="section-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-lg p-6 md:p-8 lg:col-span-2">
+          <h2 class="text-3xl font-bold text-indigo-800 mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Strategic & Technical Leadership
+          </h2>
+          <div class="flex flex-wrap gap-4">
+            <span class="skill-badge">Strategic Planning</span>
+            <span class="skill-badge">High-Level Decision Making</span>
+            <span class="skill-badge">R&D Leadership</span>
+            <span class="skill-badge">Team Collaboration</span>
+            <span class="skill-badge">Product Design</span>
+            <span class="skill-badge">Product Road Mapping</span>
+            <span class="skill-badge">Problem Solving & Innovation</span>
+            <span class="skill-badge">Stakeholder Engagement</span>
+            <span class="skill-badge">Academic–Industry Partnerships</span>
+            <span class="skill-badge">Data Analysis & Validation</span>
+            <span class="skill-badge">Grant Writing</span>
+            <span class="skill-badge">Scientific Writing</span>
+          </div>
+        </section>
+
+        <!-- Section 2: AI & Healthcare Expertise -->
+        <section class="section-card bg-gradient-to-br from-green-50 to-teal-100 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 class="text-3xl font-bold text-teal-800 mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            AI & Healthcare Expertise
+          </h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">AI/ML/DL</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">Classical & Advanced ML Models</span>
+                <span class="skill-badge">CNNs</span>
+                <span class="skill-badge">U-Net</span>
+                <span class="skill-badge">NLP</span>
+                <span class="skill-badge">GAN</span>
+                <span class="skill-badge">Generative AI (ChatGPT, Gemini, Claude, LLaMA)</span>
+                <span class="skill-badge">Agentic AI</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Model Lifecycle</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">MLOps</span>
+                <span class="skill-badge">Model Training</span>
+                <span class="skill-badge">Fine-tuning</span>
+                <span class="skill-badge">Edge AI</span>
+                <span class="skill-badge">Embedding Models</span>
+                <span class="skill-badge">Vector Databases</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Medical Imaging & Analytics</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">X-ray</span>
+                <span class="skill-badge">Mammogram</span>
+                <span class="skill-badge">Ultrasound</span>
+                <span class="skill-badge">CT</span>
+                <span class="skill-badge">MRI</span>
+                <span class="skill-badge">Ophthalmology</span>
+                <span class="skill-badge">Oral Oncology</span>
+                <span class="skill-badge">Dermatology</span>
+                <span class="skill-badge">Histopathology (H&E)</span>
+                <span class="skill-badge">Whole Slide Image (WSI)</span>
+                <span class="skill-badge">Medical Datasets</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Healthcare Standards</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">SaMD</span>
+                <span class="skill-badge">IoMT</span>
+                <span class="skill-badge">HL7</span>
+                <span class="skill-badge">DICOM</span>
+                <span class="skill-badge">FHIR</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Regulatory Compliance & Data Security</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">Regulatory Documentation</span>
+                <span class="skill-badge">CE/EU MDR</span>
+                <span class="skill-badge">ISO 13485</span>
+                <span class="skill-badge">AI Ethics</span>
+                <span class="skill-badge">Data Protection</span>
+                <span class="skill-badge">Privacy-Preserving</span>
+                <span class="skill-badge">Biometric Security</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Technical Skills & Development Tools -->
+        <section class="section-card bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl shadow-lg p-6 md:p-8">
+          <h2 class="text-3xl font-bold text-purple-800 mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+            Technical Skills & Development Tools
+          </h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Programming & Frameworks</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">R</span>
+                <span class="skill-badge">TensorFlow</span>
+                <span class="skill-badge">PyTorch</span>
+                <span class="skill-badge">Keras</span>
+                <span class="skill-badge">Scikit-learn</span>
+                <span class="skill-badge">OpenCV</span>
+                <span class="skill-badge">Pandas</span>
+                <span class="skill-badge">NumPy</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">AI Agent Development</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">LangGraph</span>
+                <span class="skill-badge">Flowise</span>
+                <span class="skill-badge">LLM APIs</span>
+                <span class="skill-badge">Agent Deployment</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Development</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">CI/CD</span>
+                <span class="skill-badge">Web/Cloud App Development</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">PyCharm</span>
+                <span class="skill-badge">Cursor</span>
+                <span class="skill-badge">Jupyter Notebook</span>
+                <span class="skill-badge">Google Colab</span>
+                <span class="skill-badge">MATLAB</span>
+                <span class="skill-badge">Simulink</span>
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">draw.io</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-3">Deployment</h3>
+              <div class="flex flex-wrap gap-4">
+                <span class="skill-badge">Microsoft Azure</span>
+                <span class="skill-badge">Streamlit Community Cloud</span>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Analytical Thinking & Technical Communication</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Data Analysis</strong>, <strong class="text-blue-700">Quantitative Reasoning</strong>, and <strong class="text-blue-700">Statistical Inference</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">Research Reporting</strong>, <strong class="text-blue-700">Scientific & Technical Writing</strong>, <strong class="text-blue-700">Proposal Development</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Collaboration & Interdisciplinary Work</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Cross-functional Teamwork</strong>, <strong class="text-blue-700">Stakeholder Engagement & Communication</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">Academic–Industry Partnerships</strong> and <strong class="text-blue-700">Translational Research Coordination</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Artificial Intelligence & Machine Learning</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Machine Learning</strong>, <strong class="text-blue-700">Deep Learning</strong> (CNNs, RNNs), <strong class="text-blue-700">Generative AI</strong> (GANs), <strong class="text-blue-700">Large Language Models</strong> (LLMs)</li>
-        <li class="text-justify"><strong class="text-blue-700">NLP:</strong> BERT, Transformers, Text Classification</li>
-        <li class="text-justify"><strong class="text-blue-700">Prompt Engineering</strong> (ChatGPT, Gemini), <strong class="text-blue-700">Model Training & Fine-tuning</strong>, and <strong class="text-blue-700">Feature Engineering</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Healthcare & Biomedical Applications</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Medical Image Analysis</strong> (X-ray, MRI, CT, Ultrasound, Mammography, Histopathology), and <strong class="text-blue-700">Clinical Data Analysis</strong> (Demographic & Clinical, ECG Signal, and EEG Signal)</li>
-        <li class="text-justify">Knowledge of <strong class="text-blue-700">HL7 & FHIR standards</strong>, <strong class="text-blue-700">DICOM standard</strong>, <strong class="text-blue-700">Software as a Medical Device (SaMD) Development</strong>, <strong class="text-blue-700">CE/FDA Compliance</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">Clinical Decision Support Systems</strong>, <strong class="text-blue-700">Remote Patient Monitoring & IoMT Solutions</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Privacy, Security, Computer Vision & Signal Processing</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Data Protection in Healthcare</strong>, <strong class="text-blue-700">Cryptographic Solutions</strong>, <strong class="text-blue-700">Biometric Security</strong>, <strong class="text-blue-700">Digital Rights Management</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">Compressive Sensing</strong>, <strong class="text-blue-700">Signal & Image Processing Techniques</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Programming Languages & Libraries</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Python</strong>, <strong class="text-blue-700">R</strong>, <strong class="text-blue-700">MATLAB</strong>, <strong class="text-blue-700">Simulink</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">AI/ML Frameworks & Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">TensorFlow</strong>, <strong class="text-blue-700">PyTorch</strong>, <strong class="text-blue-700">Keras</strong>, <strong class="text-blue-700">Scikit-learn</strong>, <strong class="text-blue-700">OpenCV</strong></li>
-        <li class="text-justify"><strong class="text-blue-700">ChatGPT & Gemini</strong> (Prompt Engineering), <strong class="text-blue-700">Cursor</strong> (AI IDE), <strong class="text-blue-700">v0.dev</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Data Science & Computational Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Pandas</strong>, <strong class="text-blue-700">NumPy</strong>, <strong class="text-blue-700">Google Colab</strong>, <strong class="text-blue-700">SCILAB</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">UI/UX Design & Prototyping Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Figma</strong>, <strong class="text-blue-700">Google Stitch</strong> (AI-powered UI/UX Design)</li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Project & Task Management Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Microsoft 365</strong> (Project, Planner, OneNote, SharePoint), <strong class="text-blue-700">Notion</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">System Design & Visualization Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">draw.io</strong> (Architecture Diagrams, Flowcharts), <strong class="text-blue-700">napkin.ai</strong> (AI Concept Sketching)</li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Documentation & Productivity Tools</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Microsoft Word</strong>, <strong class="text-blue-700">Excel</strong>, <strong class="text-blue-700">PowerPoint</strong>, <strong class="text-blue-700">LaTeX</strong></li>
-      </ul>
-    </div>
-
-    <div class="skill-section bg-white rounded-2xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Communication & Collaboration Platforms</h2>
-      <ul class="list-disc list-outside space-y-2 pl-6 text-gray-800">
-        <li class="text-justify"><strong class="text-blue-700">Microsoft Teams</strong>, <strong class="text-blue-700">Google Meet</strong>, <strong class="text-blue-700">Zoom</strong></li>
-      </ul>
-    </div>
-
 </main>
 
-<footer class="site-footer bg-blue-100 text-center py-4 text-gray-700 text-sm mt-12">
+<footer class="site-footer bg-white text-center py-4 text-gray-600 text-sm border-t border-gray-200">
     <div class="container mx-auto px-4">
-      <p>&copy; 2025 Dr. Rohit Thanki | Senior AI Scientist & MedTech Innovator</p>
+      <p>&copy; 2025 Dr. Rohit Thanki | Senior AI Specialist – Healthcare & Medical Imaging </p>
     </div>
 </footer>
 </body>
 </html>
-
