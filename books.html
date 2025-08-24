@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+      background-color: #eaf4ff; /* A light blue background */
     }
     main {
       flex: 1; /* Allows main content to grow and push footer down */
@@ -25,9 +26,82 @@
       width: 100%; /* Full width */
       z-index: 999; /* Ensure it stays above other content if scrolling */
     }
+    /* Bookshelf styles */
+    .bookshelf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .books-on-shelf {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 50px; /* Increased gap for 3D effect */
+      width: 90%;
+      max-width: 1200px;
+      padding: 20px;
+      margin-bottom: 1rem;
+    }
+    .book-item {
+      width: 180px; /* Increased width for 3D effect */
+      text-align: center;
+      perspective: 1000px; /* Add perspective for 3D effect */
+    }
+    .book {
+      width: 150px;
+      height: 220px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: -10px 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transform: rotateY(-25deg); /* Initial rotated state */
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .book-item a {
+        text-decoration: none;
+    }
+    .book:hover {
+      transform: rotateY(0deg) scale(1.05); /* Straighten and slightly enlarge on hover */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .book img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .book-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #003366; /* Dark blue text color */
+      margin-top: 1rem;
+      height: 80px; /* Increased height for longer titles */
+      line-height: 1.3;
+    }
+    .book-title a {
+        color: inherit;
+    }
+    .book-title a:hover {
+        text-decoration: underline;
+    }
+    .shelf {
+      background: #34495e; /* Dark slate blue for the shelf */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 1200px;
+      height: 15px;
+      border-radius: 2px;
+    }
+    .main-heading {
+        color: #003366; /* Dark blue heading color */
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 leading-relaxed antialiased">
+<body class="text-gray-800 leading-relaxed antialiased">
+  <!-- Header remains unchanged -->
   <header class="site-header bg-blue-100 shadow-md py-4 sticky top-0 z-10">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="logo text-2xl font-bold text-blue-800 mb-2 md:mb-0">Dr. Rohit Thanki</div>
@@ -51,169 +125,156 @@
   </header>
 
 <main class="container mx-auto px-4 py-8 md:py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-blue-700 text-center mb-8">Upcoming Books</h1>
-    <div class="book-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-8">
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_placeholder.jpg" alt="Book Cover" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">Navigating the MedTech Maze – A Practical Guide to Regulatory Compliance</div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_placeholder.jpg" alt="Book Cover" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">Artificial Intelligence in Drug Discovery and Development</div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_placeholder.jpg" alt="Book Cover" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">Internet of Medical Things (IoMT) using Artificial Intelligence</div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_placeholder.jpg" alt="Book Cover" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">Artificial Intelligence for Early Detection and Diagnosis of Lung Cancer</div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_placeholder.jpg" alt="Book Cover" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">AI Role in Haptic Healthcare</div>
-      </div>
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 main-heading">Upcoming Books</h1>
 
+    <div class="bookshelf">
+      <div class="books-on-shelf">
+        <div class="book-item">
+          <a href="#" class="book"><img src="images/book_placeholder.jpg" alt="Book Cover" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="#">Navigating the MedTech Maze – A Practical Guide to Regulatory Compliance</a></div>
+        </div>
+        <div class="book-item">
+          <a href="#" class="book"><img src="images/book_placeholder.jpg" alt="Book Cover" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="#">Artificial Intelligence in Drug Discovery and Development</a></div>
+        </div>
+        <div class="book-item">
+          <a href="#" class="book"><img src="images/book_placeholder.jpg" alt="Book Cover" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="#">Internet of Medical Things (IoMT) using Artificial Intelligence</a></div>
+        </div>
+        <div class="book-item">
+          <a href="#" class="book"><img src="images/book_placeholder.jpg" alt="Book Cover" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="#">Artificial Intelligence for Early Detection and Diagnosis of Lung Cancer</a></div>
+        </div>
+        <div class="book-item">
+          <a href="#" class="book"><img src="images/book_placeholder.jpg" alt="Book Cover" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="#">AI Role in Haptic Healthcare</a></div>
+        </div>
+      </div>
+      <div class="shelf"></div>
     </div>
 
-    <h1 class="text-3xl md:text-4xl font-bold text-blue-700 text-center mb-8">Published Books</h1>
-    <div class="book-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-12">
+    <h1 class="text-3xl md:text-4xl font-bold text-center my-8 main-heading">Published Books</h1>
 
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_oral_cancer.jpg" alt="AI in Oral Cancer" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/9783032050557" target="_blank" class="hover:underline">
-            Artificial Intelligence for Early Detection and Diagnosis of Oral Cancer</a></div>
+    <div class="bookshelf">
+      <div class="books-on-shelf">
+        <div class="book-item">
+          <a href="https://link.springer.com/book/9783032050557" target="_blank" class="book"><img src="book%20images/book_oral_cancer.webp" alt="AI in Oral Cancer" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/9783032050557" target="_blank">Artificial Intelligence for Early Detection and Diagnosis of Oral Cancer</a></div>
+        </div>
+        <div class="book-item">
+          <a href="https://link.springer.com/book/9783031941160" target="_blank" class="book"><img src="book%20images/book_ML_WC.webp" alt="ML in Wireless Communication" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/9783031941160" target="_blank">Machine Learning for Wireless Communication</a></div>
+        </div>
+        <div class="book-item">
+          <a href="https://link.springer.com/book/10.1007/978-3-031-69666-4" target="_blank" class="book"><img src="book%20images/book_cervical_cancer.webp" alt="Cervical Cancer Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-031-69666-4" target="_blank">Artificial Intelligence for Early Detection and Diagnosis of Cervical Cancer</a></div>
+        </div>
+        <div class="book-item">
+          <a href="https://link.springer.com/book/10.1007/978-3-031-44877-5" target="_blank" class="book"><img src="book%20images/book_XAI_ML_MC.webp" alt="Explainable ML Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-031-44877-5" target="_blank">Explainable Machine Learning in Medicine</a></div>
+        </div>
+         <div class="book-item">
+          <a href="https://link.springer.com/book/10.1007/978-3-031-33238-8" target="_blank" class="book"><img src="book%20images/book_AT_IA.webp" alt="Industrial Applications Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-031-33238-8" target="_blank">Advanced Technologies in Industrial Applications</a></div>
+        </div>
       </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_ml_wc.jpg" alt="ML in Wireless Communication" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/9783031941160" target="_blank" class="hover:underline">
-            Machine Learning for Wireless Communication</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_cervical_cancer.jpg" alt="Cervical Cancer Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-031-69666-4" target="_blank" class="hover:underline">
-            Artificial Intelligence for Early Detection and Diagnosis of Cervical Cancer</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_explainable_ml.jpg" alt="Explainable ML Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-031-44877-5" target="_blank" class="hover:underline">
-            Explainable Machine Learning in Medicine</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_advanced_tech.jpg" alt="Industrial Applications Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-031-33238-8" target="_blank" class="hover:underline">
-            Advanced Technologies in Industrial Applications</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_moving_objects.jpeg" alt="Moving Objects Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-030-90910-9" target="_blank" class="hover:underline">
-            Moving Objects Detection using Machine Learning</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_breast_cancer.jpg" alt="Breast Cancer Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-030-59208-0" target="_blank" class="hover:underline">
-            Artificial Intelligence in Breast Cancer Early Detection and Diagnosis</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_Wimax.jpg" alt="WiMAX Modelling Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-030-22460-8" target="_blank" class="hover:underline">
-            WiMAX Modelling: Techniques and Applications</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_video_compression.jpg" alt="Video Compression Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-981-15-0245-3" target="_blank" class="hover:underline">
-            Hybrid Video Compression Standard</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_audio_wa.jpg" alt="Audio Watermarking Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-030-24186-5" target="_blank" class="hover:underline">
-            Advanced Techniques for Audio Watermarking</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_compression_MI.jpg" alt="Compression MI Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-030-12575-2" target="_blank" class="hover:underline">
-            Hybrid and Advanced Compression Techniques for Medical Image</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_satellite_im.jpg" alt="Satellite IM Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-981-13-6424-2" target="_blank" class="hover:underline">
-            Satellite Image Analysis: Clustering and Classification</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_dental.jpg" alt="Dental IP Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-99471-0" target="_blank" class="hover:underline">
-            Dental Image Processing for Human Identification</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_DIW.jpg" alt="DIW Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://www.routledge.com/Digital-Image-Watermarking-Theoretical-and-Computational-Advances/Borra-Thanki-Dey/p/book/9780367670351?srsltid=AfmBOopd1aPBEZEFIJ9YFBuXvx6_1WJd9tuy-sdNOI08Lluyf0pQPlgQ" target="_blank" class="hover:underline">
-            Digital Image Watermarking: Theoretical and Computational Advances</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_speech_enhancement.jpg" alt="Speech Enhancement Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-96821-6" target="_blank" class="hover:underline">
-            Speech Enhancement Techniques for Digital Hearing Aids</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_wtcp.jpg" alt="WTCP Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-92837-1" target="_blank" class="hover:underline">
-            Watermarking Techniques for Copyright Protection of Videos</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_MISTA.jpg" alt="MISTA Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-93311-5" target="_blank" class="hover:underline">
-            Medical Imaging and its Security in Telemedicine Applications</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_scilab.jpg" alt="Scilab Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-89533-8" target="_blank" class="hover:underline">
-            Digital Image Processing using SCILAB</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_multibiometric.jpg" alt="Multibiometric Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-73183-4" target="_blank" class="hover:underline">
-            Multibiometric Watermarking with Compressive Sensing Theory</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_advance_compression.jpg" alt="Advance Compression Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://link.springer.com/book/10.1007/978-3-319-69069-8" target="_blank" class="hover:underline">
-            Advance Compression and Watermarking Techniques for Speech Signals</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_ota.jpg" alt="OTA Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://www.amazon.com/Design-Operational-Transconductance-Amplifier-Schematic/dp/3843361460" target="_blank" class="hover:underline">
-            Design of Operational Transconductance Amplifier</a></div>
-      </div>
-      <div class="book bg-white rounded-2xl shadow-md p-4 flex flex-col items-center">
-        <img src="images/book_watermarking.jpg" alt="Watermarking Book" class="w-full h-auto max-h-48 object-contain rounded-lg shadow-sm mb-4">
-        <div class="book-title text-center font-semibold text-blue-700 text-base">
-            <a href="https://www.amazon.com/Comparative-Analysis-Digital-Watermarking-Techniques/dp/3844385886" target="_blank" class="hover:underline">
-            Comparative Analysis of Digital Watermarking Techniques</a></div>
-      </div>
+      <div class="shelf"></div>
     </div>
-  </main>
 
+    <div class="bookshelf">
+      <div class="books-on-shelf">
+         <div class="book-item">
+          <a href="https://link.springer.com/book/10.1007/978-3-030-90910-9" target="_blank" class="book"><img src="book%20images/book_MOD_ML.webp" alt="Moving Objects Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+          <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-030-90910-9" target="_blank">Moving Objects Detection using Machine Learning</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-030-59208-0" target="_blank" class="book"><img src="book%20images/book_breast_cancer.webp" alt="Breast Cancer Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-030-59208-0" target="_blank">Artificial Intelligence in Breast Cancer Early Detection and Diagnosis</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-030-22460-8" target="_blank" class="book"><img src="book%20images/book_WIMAX.webp" alt="WiMAX Modelling Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-030-22460-8" target="_blank">WiMAX Modelling: Techniques and Applications</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-981-15-0245-3" target="_blank" class="book"><img src="book%20images/book_HVCS.webp" alt="Video Compression Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-981-15-0245-3" target="_blank">Hybrid Video Compression Standard</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-030-24186-5" target="_blank" class="book"><img src="book%20images/book_audio_watermarking.webp" alt="Audio Watermarking Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-030-24186-5" target="_blank">Advanced Techniques for Audio Watermarking</a></div>
+        </div>
+      </div>
+      <div class="shelf"></div>
+    </div>
+
+    <div class="bookshelf">
+      <div class="books-on-shelf">
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-030-12575-2" target="_blank" class="book"><img src="book%20images/book_HACT_MI.webp" alt="Compression MI Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-030-12575-2" target="_blank">Hybrid and Advanced Compression Techniques for Medical Image</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-981-13-6424-2" target="_blank" class="book"><img src="book%20images/book_SIA_CC.webp" alt="Satellite IM Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-981-13-6424-2" target="_blank">Satellite Image Analysis: Clustering and Classification</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-319-99471-0" target="_blank" class="book"><img src="book%20images/book_DIP_HI.webp" alt="Dental IP Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-99471-0" target="_blank">Dental Image Processing for Human Identification</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://www.routledge.com/Digital-Image-Watermarking-Theoretical-and-Computational-Advances/Borra-Thanki-Dey/p/book/9780367670351" target="_blank" class="book"><img src="book%20images/book_DIW.jpeg" alt="DIW Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://www.routledge.com/Digital-Image-Watermarking-Theoretical-and-Computational-Advances/Borra-Thanki-Dey/p/book/9780367670351" target="_blank">Digital Image Watermarking: Theoretical and Computational Advances</a></div>
+        </div>
+        <div class="book-item">
+            <a href="https://link.springer.com/book/10.1007/978-3-319-96821-6" target="_blank" class="book"><img src="book%20images/book_SETDA.webp" alt="Speech Enhancement Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+            <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-96821-6" target="_blank">Speech Enhancement Techniques for Digital Hearing Aids</a></div>
+        </div>
+      </div>
+      <div class="shelf"></div>
+    </div>
+
+    <div class="bookshelf">
+        <div class="books-on-shelf">
+            <div class="book-item">
+                <a href="https://link.springer.com/book/10.1007/978-3-319-92837-1" target="_blank" class="book"><img src="book%20images/book_WT_CPV.webp" alt="WTCP Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-92837-1" target="_blank">Watermarking Techniques for Copyright Protection of Videos</a></div>
+            </div>
+            <div class="book-item">
+                <a href="https://link.springer.com/book/10.1007/978-3-319-93311-5" target="_blank" class="book"><img src="book%20images/book_MI_STA.webp" alt="MISTA Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-93311-5" target="_blank">Medical Imaging and its Security in Telemedicine Applications</a></div>
+            </div>
+            <div class="book-item">
+                <a href="https://link.springer.com/book/10.1007/978-3-319-89533-8" target="_blank" class="book"><img src="book%20images/book_DIP_SCILAB.webp" alt="Scilab Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-89533-8" target="_blank">Digital Image Processing using SCILAB</a></div>
+            </div>
+            <div class="book-item">
+                <a href="https://link.springer.com/book/10.1007/978-3-319-73183-4" target="_blank" class="book"><img src="book%20images/book_MW_CST.webp" alt="Multibiometric Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-73183-4" target="_blank">Multibiometric Watermarking with Compressive Sensing Theory</a></div>
+            </div>
+            <div class="book-item">
+                <a href="https://link.springer.com/book/10.1007/978-3-319-69069-8" target="_blank" class="book"><img src="book%20images/book_ACWT_SS.webp" alt="Advance Compression Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://link.springer.com/book/10.1007/978-3-319-69069-8" target="_blank">Advance Compression and Watermarking Techniques for Speech Signals</a></div>
+            </div>
+        </div>
+        <div class="shelf"></div>
+    </div>
+
+    <div class="bookshelf">
+        <div class="books-on-shelf">
+            <div class="book-item">
+                <a href="https://www.amazon.com/Design-Operational-Transconductance-Amplifier-Schematic/dp/3843361460" target="_blank" class="book"><img src="book%20images/book_OTA.jpg" alt="OTA Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://www.amazon.com/Design-Operational-Transconductance-Amplifier-Schematic/dp/3843361460" target="_blank">Design of Operational Transconductance Amplifier</a></div>
+            </div>
+            <div class="book-item">
+                <a href="https://www.amazon.com/Comparative-Analysis-Digital-Watermarking-Techniques/dp/3844385886" target="_blank" class="book"><img src="book%20images/book_CA_DWT.jpg" alt="Watermarking Book" onerror="this.onerror=null;this.src='https://placehold.co/150x220/cccccc/ffffff?text=Image+Not+Found';"></a>
+                <div class="book-title"><a href="https://www.amazon.com/Comparative-Analysis-Digital-Watermarking-Techniques/dp/3844385886" target="_blank">Comparative Analysis of Digital Watermarking Techniques</a></div>
+            </div>
+        </div>
+        <div class="shelf"></div>
+    </div>
+</main>
+
+<!-- Footer remains unchanged -->
 <footer class="site-footer bg-blue-100 text-center py-4 text-gray-700 text-sm mt-12">
     <div class="container mx-auto px-4">
       <p>&copy; 2025 Dr. Rohit Thanki | Senior AI Specialist – Healthcare & Medical Imaging</p>
@@ -221,9 +282,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
