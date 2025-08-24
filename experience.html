@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+      background-color: #eaf4ff; /* A light blue background */
     }
     main {
       flex: 1; /* Allows main content to grow and push footer down */
@@ -25,9 +26,12 @@
       width: 100%; /* Full width */
       z-index: 999; /* Ensure it stays above other content if scrolling */
     }
+    .main-heading {
+    color: #0a57fd; /* Dark blue heading color */
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 leading-relaxed antialiased">
+<body class="text-gray-800 leading-relaxed antialiased">
   <header class="site-header bg-blue-100 shadow-md py-4 sticky top-0 z-10">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="logo text-2xl font-bold text-blue-800 mb-2 md:mb-0">Dr. Rohit Thanki</div>
@@ -51,7 +55,7 @@
   </header>
 
   <main class="container mx-auto px-4 py-8 md:py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">AI MedTech Industry Experience</h1>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6 main-heading">AI MedTech Industry Experience</h1>
 
       <div class="experience-item bg-white rounded-2xl shadow-lg p-6 mb-8">
           <h2 class="text-2xl font-semibold text-blue-700 mb-2">Data Scientist</h2>
@@ -107,7 +111,7 @@
           medical imaging, digital health, and data security.</p>
     </div>
     
-    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12">Research Experience</h1>
+    <h1 class="text-3xl md:text-4xl font-bold main-heading mb-6 mt-12">Research Experience</h1>
 
     <div class="experience-item bg-white rounded-2xl shadow-lg p-6 mb-8">
       <h2 class="text-2xl font-semibold text-blue-700 mb-2">PhD Examination Board Member</h2>
@@ -130,7 +134,7 @@
             standards.</p>
     </div>
 
-    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-12">Academic Experience</h1>
+    <h1 class="text-3xl md:text-4xl font-bold main-heading mb-6 mt-12">Academic Experience</h1>
 
     <div class="experience-item bg-white rounded-2xl shadow-lg p-6 mb-8">
       <h2 class="text-2xl font-semibold text-blue-700 mb-2">Visiting Lecturer</h2>
@@ -183,6 +187,3 @@
   </footer>
 </body>
 </html>
-
-
-
