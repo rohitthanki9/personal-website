@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+      background-color: #eaf4ff; /* A light blue background */
     }
     main {
       flex: 1; /* Allows main content to grow and push footer down */
@@ -25,9 +26,12 @@
       width: 100%; /* Full width */
       z-index: 999; /* Ensure it stays above other content if scrolling */
     }
+    .main-heading {
+    color: #0a57fd; /* Dark blue heading color */
+    }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 leading-relaxed antialiased">
+<body class="text-gray-800 leading-relaxed antialiased">
   <header class="site-header bg-blue-100 shadow-md py-4 sticky top-0 z-10">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="logo text-2xl font-bold text-blue-800 mb-2 md:mb-0">Dr. Rohit Thanki</div>
@@ -53,10 +57,10 @@
   <main class="container mx-auto px-4 py-8 md:py-12">
     <section class="about-section bg-white rounded-2xl shadow-lg p-6 md:p-10 flex flex-col items-center gap-8 mb-12">
       <div class="bio w-full">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h1>
+        <h1 class="text-3xl md:text-4xl font-bold main-heading mb-4">About Me</h1>
 
         <p class="mb-4 text-gray-700 text-justify">I am a <strong class="text-blue-800"> Senior AI Specialist </strong> currently based in Wolfsburg, Germany, originally from Gujarat, India.
-             I work at <strong class="text-blue-800">KRiAN GmbH</strong>, where I bring over <strong class="text-blue-800">8 years of expertise in Artificial Intelligence (AI)-driven MedTech</strong> specifically applied to the healthcare and
+            I bring over <strong class="text-blue-800">8 years of expertise in Artificial Intelligence (AI)-driven MedTech</strong> specifically applied to the healthcare and
             pharma sectors. I have <strong class="text-blue-800">15+ years of scientific research experience</strong> in advanced technologies such as <strong class="text-indigo-800">
             computer vision, artificial intelligence, medical data analysis, biometrics, data security, and signal processing</strong>, which equip me with a deep understanding of innovative
             technology and its practical applications. I focus on developing creative, <strong class="text-blue-800">AI-powered solutions</strong> that address critical challenges in
